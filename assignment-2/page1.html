@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div>
+          <h1>Dog Profile</h1>
+          <p>Create and view your dog's profile</p>
+        </div>
+      </header>
+
+      <section class="hero">
+        <img src="./images/one.jpg" alt="Dog 1" />
+        <img src="./images/two.jpg" alt="Dog 2" />
+      </section>
+
+      <section class="form-section">
+        <h2>Enter the details of your dog</h2>
+
+        <form action="page2.html" method="get">
+          <div>
+            <label for="owner_name">Owner's Name</label>
+            <input
+              type="text"
+              name="owner_name"
+              id="owner_name"
+              placeholder="e.g. John Doe"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="dog_name">Dog's Name</label>
+            <input
+              type="text"
+              name="dog_name"
+              id="dog_name"
+              placeholder="e.g. Micky"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="dog_breed">Dog's breed</label>
+            <input
+              type="text"
+              name="dog_breed"
+              id="dog_breed"
+              placeholder="e.g. German Shepherd"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="dog_age">Dog's age</label>
+            <input
+              type="number"
+              name="dog_age"
+              id="dog_age"
+              required
+              placeholder="e.g. 11"
+            />
+          </div>
+
+          <div>
+            <label>Dog's Gender:</label>
+            <div class="radio-group">
+              <label for="dog_gender_male">Male</label>
+              <input
+                type="radio"
+                name="dog_gender"
+                id="dog_gender_male"
+                value="Male"
+                required
+              />
+              <label for="dog_gender_female">Female</label>
+              <input
+                type="radio"
+                name="dog_gender"
+                value="Female"
+                id="dog_gender_female"
+                required
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="dog_fav_activity">Favorite Activity</label>
+            <input
+              type="text"
+              name="dog_fav_activity"
+              id="dog_fav_activity"
+              placeholder="e.g. Hiking"
+              required
+            />
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="btn primary">Generate Dog Card</button>
+            <button type="reset" class="btn secondary">Clear</button>
+          </div>
+        </form>
+      </section>
+
+      <button id="theme-toggle">🌑 Change to Dark Mode</button>
+    </div>
+
+    <script src="theme-mode.js"></script>
+  </body>
+</html>
