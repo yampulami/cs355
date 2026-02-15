@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dog Finder</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <form onsubmit="showDogImage(event)">
+      <h1>🐕 Dog Finder</h1>
+      <label for="dog-choice">Search a dog breed</label>
+      <input
+        list="dogs"
+        id="dog-choice"
+        name="dog-choice"
+        placeholder="Try 'labrador', 'golden retriever'..."
+      />
+
+      <datalist id="dogs"></datalist>
+
+      <button type="submit">Find My Dog</button>
+    </form>
+
+    <div id="image-container"></div>
+
+    <div class="footer">
+      Powered by
+      <a href="https://dog.ceo/dog-api/" target="_blank">Dog CEO API</a>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,4 +1,5 @@
-const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent";
+const API_URL =
+  "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent";
 
 async function getRecipe() {
   const apiKey = document.getElementById("api-key-input").value.trim();
@@ -18,15 +19,22 @@ async function getRecipe() {
     const response = await fetch(API_URL, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
-        "X-goog-api-key": apiKey
+        "Content-Type": "applicatison",
+        "X-goog-api-key": apiKey,
       },
-      body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+      body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] }),
     });
 
     const data = await response.json();
+
+    if (data?.error?.message) {
+      throw data.error.message;
+    }
+
+    console.log({ data });
     recipeDisplay.innerHTML = data.candidates[0].content.parts[0].text;
   } catch (err) {
-    recipeDisplay.textContent = "Error fetching recipe. Check your API key or connection.";
+    // console.log({ err: JSON.stringify(err) });
+    recipeDisplay.textContent = err;
   }
 }
